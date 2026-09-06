@@ -4,29 +4,39 @@
 //your code goes here:
 
 #include <iostream>
+#include <cmath>
 using namespace std ; 
+
   
 int main()
 {
     int  number ;
     cout<<" Enter the number to verify: ";
     cin>> number;
-    // we will be using goto control statement to send the control to our if checks repeteadly :
-    // here EVEN is a label which refers to the case: if number is even. 
 
-    //Note-1 :The Program won't terminate if you don't update the value of number for 2nd round, because otherwise you'll just be passing the same number back.
-    //Note-2 :The base case should be the first check otherwise in the if-else hierarchy--> ((number >>1) % 2 !=0 ) was getting evaluated first and thus--> wrong output.
-    EVEN: 
-    if((number >> 1) == 1  ) //checking for if the number is 2?. This is actually our default/Final case.
+    //check for power of 2 using while loop
+        // int power=0;
+        // while(pow(2,power) <number)
+        // {
+        //     power++;
+        // }
+
+        // if(pow(2,power) == number)
+        // {
+        //     cout<< "YES, it is a power of 2. End of program.";
+        //     return 1;
+        // }
+        // else
+        // {
+        //     cout<< "NO, it is not a power of 2. End of program.";
+        //     return 0;
+        // }
+
+    //check for power of 2 without using loops , instead using bitwise AND operator 
+    if((number > 0) && ((number & (number -1)) == 0))
     {
-        cout<< " YES, it is a power of 2. End of program.";
-    }else if ( (number >> 1) % 2 != 0)   // The number is ODD.
-    { 
-        cout<< "Not a Power of 2. End of program. ";
-    } else{
-        number = number >> 1 ;
-        goto EVEN;
-    }
-    return 1;
+        cout<< "YES, it is a power of 2 . End of Program."<<endl;
+    }else cout<< "NO , it is  not a power of 2. End of  program." <<endl;
 
+    return 0;
 }
