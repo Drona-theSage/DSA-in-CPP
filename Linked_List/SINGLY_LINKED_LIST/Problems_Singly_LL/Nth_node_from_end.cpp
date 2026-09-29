@@ -16,10 +16,6 @@
 #include "../Singly_LL.hpp"
 using namespace std;
 
-int length_ofLinkedList(Node * head);
-
-Node* Nth_node_from_end( Node* head, int n);
-
 
 Node* Nth_node_from_end( Node* head, int n){
       //takes the head of Linked list and an integer index "n" and returns the address of nth-node from end.
